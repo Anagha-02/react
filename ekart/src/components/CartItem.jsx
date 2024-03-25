@@ -1,13 +1,14 @@
+import Button from "../Layout/Button"
 
-import '../App.css'
-
-function CartItem() {
+function CartItem({ name,
+  price,
+  onDecrease}) {
   return (
-    <div className="CartItem">      
-      <div>
-        CartItem Page
-      </div>
-    </div>
+    <li className="cart-item">
+      <span> <Button onClick={onDecrease}>-</Button> </span>
+      <span> {name} </span>
+      <span>  {price} </span>
+    </li>
   )
 }
 

@@ -1,7 +1,7 @@
 
-import '../App.css'
 
 function Checkout() {
+
   return (
     <div className="Checkout">      
       <div>

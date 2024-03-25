@@ -1,14 +1,32 @@
+import Error from './Error.jsx';
+import AvailableItem from './AvailableItem.jsx';
+import useHttp from '../hooks/useHttp.jsx';
 
-import '../App.css'
+const requestConfig = {};
 
-function ItemList() {
+function ItemsList() {
+  const {
+    data: loadedItemsList,
+    isLoading,
+    error,
+  } = useHttp('http://localhost:3000/items', requestConfig, []);
+
+  if (isLoading) {
+    return <p className="center">Fetching itemsList...</p>;
+  }
+
+  if (error) {
+    return <Error title="Failed to fetch itemsList" message={error} />;
+  }
+
   return (
-    <div className="ItemList">      
-      <div>
-        ItemList Page
-      </div>
-    </div>
-  )
+    <ul id="itemsList">
+      {loadedItemsList.length === 0 && <span className='emptyList'> Nothing to display</span>}
+      {loadedItemsList.map((item) => (
+        <AvailableItem key={item.itemId} item={item} />
+      ))}
+    </ul>
+  );
 }
 
-export default ItemList
+export default ItemsList
