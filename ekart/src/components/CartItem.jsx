@@ -7,7 +7,7 @@ function CartItem({ name,
     <li className="cart-item">
       <span> <Button onClick={onDecrease}>-</Button> </span>
       <span> {name} </span>
-      <span>  {price} </span>
+      <span>  &#8377;&nbsp;{price} </span>
     </li>
   )
 }

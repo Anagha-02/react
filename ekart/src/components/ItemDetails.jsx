@@ -43,7 +43,7 @@ function ItemDetails({item}) {
     const resData = sendRequest(jsonData)
   }, [item]
   )
-  
+
   function handleAddItemToCart() {
     cartCtx.addItem(item);
   }
@@ -66,7 +66,7 @@ function ItemDetails({item}) {
               <h3>{loadedItems[0]['material']}</h3>
               <h3>{loadedItems[0]['seller']}</h3>
               <p className="item-price">
-                {item['price']}
+                &#8377;&nbsp;{item['price']}
               </p>
             </div>
           }

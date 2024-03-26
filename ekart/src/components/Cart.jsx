@@ -103,7 +103,7 @@ function Cart() {
           ))}
         </ul>
       </div>
-      <p className="cart-total">Cart Total: {cartTotal}</p>
+      <p className="cart-total">Cart Total: &#8377;&nbsp;{cartTotal}</p>
       {/* <Button onClick={handleCloseCart}>
         Close
       </Button>

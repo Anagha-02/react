@@ -16,10 +16,10 @@ body {
 h1 {
   font-family: 'Mono', sans-serif;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 30px;
   margin: 0;
-  color: #ffc404;
-  letter-spacing: 0.2rem;
+  color: #ffab04;
+  letter-spacing: 0.30px;
   text-transform: uppercase;
 }
 
@@ -42,7 +42,7 @@ h1 {
 #main-header {
   display: flex;
   padding: 10px;  
-  background-color: #18dec6;
+  background-color: #3ff4de;
   min-height: 30px;
   display: flex;
   font-size: large;
@@ -52,87 +52,94 @@ h1 {
 
 #main-header #title {
   display: flex;
-  gap: 1rem;
+  gap: 15px;
   align-items: center;
 }
 
 #main-header #title img {
-  width: 4rem;
-  height: 4rem;
+  width: 65px;
+  height: 65px;
   object-fit: contain;
   border-radius: 50%;
-  border: 2px solid #ffc404;
+  border: 2px solid #ffab04;
 }
 
 #main-header button {
-  font-size: 1.5rem;
+  font-size: 20px;
   font-family: 'Mono', sans-serif;
+}
+
+.userName {
+  color: #ffab04;
+  font-weight: 500;
+  font-size: larger;
+  text-shadow: 0px 0px 5px #000;
 }
 
 #itemsList {
   width: 90%;
-  max-width: 70rem;
   list-style: none;
-  margin: 2rem auto;
-  padding: 1rem;
+  margin: 30px auto;
+  padding: 15px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 15px;
 }
 
 .item {
-  background-color: #1d1a16;
-  border-radius: 1rem;
-  overflow: hidden;
+  border-style: outset;
+  border-radius: 15px;
+  overflow: visible;
   text-align: center;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 6px #ffab04;
 }
 
 .item img {
   width: 100%;
   height: 345px;
   object-fit: contain;
+  background: blanchedalmond;
 }
 
 .item h3 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0.75rem 0;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 15px 0;
+  color: black;
 }
 
 .item-description {
-  margin: 1rem;
+  margin: 15px;
 }
 
 .item-price {
-  display: inline-block;
-  background-color: #312c1d;
-  color: #ffc404;
-  font-size: 0.9rem;
-  font-weight: bold;
-  padding: 0.5rem 2rem;
+  color: #ffab04;
   margin: 0;
-  border-radius: 4px;
 }
 
 .item-actions {
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
 }
 
 .cart h2 {
-  margin: 1rem 0;
+  margin: 15px 0;
 }
 
 .cart ul {
   list-style: none;
-  margin: 0.5rem 0;
+  margin: 10px 0;
   padding: 0;
+}
+
+.cart-text {  
+  position: absolute;
+  transform: translate(-10px, -10px);
 }
 
 .modal-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 1rem;
+  gap: 15px;
 }
 
 .modal-actions .text-button {
@@ -147,8 +154,8 @@ h1 {
 .cart-total {
   display: flex;
   justify-content: flex-end;
-  margin: 2rem 0;
-  font-size: 1.15rem;
+  margin: 30px 0;
+  font-size: 18px;
   font-weight: bold;
   color: #46443c;
 }
@@ -157,7 +164,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5rem 0;
+  margin: 10px 0;
   margin: 10px;
   border-style: inset;
   padding: 10px;
@@ -165,19 +172,19 @@ h1 {
 
 .cart-item-actions {
   display: flex;
-  gap: 1rem;
+  gap: 15px;
   align-items: center;
 }
 
 .cart-item-actions button {
   cursor: pointer;
-  font-size: 1rem;
-  width: 1.5rem;
-  height: 1.5rem;
+  font-size: 15px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: none;
   background-color: #312c1d;
-  color: #ffc404;
+  color: #ffab04;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -190,21 +197,21 @@ h1 {
 }
 
 .control {
-  margin: 0.5rem 0;
+  margin: 10px 0;
   display: flex;
   flex-direction: column;
 }
 
 .control label {
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
 }
 
 .control input {
   width: 100%;
-  max-width: 20rem;
+  max-width: 320px;
   font: inherit;
-  padding: 0.5rem;
+  padding: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
 }
@@ -212,16 +219,16 @@ h1 {
 .control-row {
   display: flex;
   justify-content: flex-start;
-  gap: 1rem;
+  gap: 15px;
 }
 
 .button {
   font: inherit;
   cursor: pointer;
-  background-color: #ffc404;
-  border: 1px solid #ffc404;
+  background-color: #ffab04;
+  border: 1px solid #ffab04;
   color: #1f1a09;
-  padding: 0.5rem 1.5rem;
+  padding: 10px 20px;
   border-radius: 4px;
 }
 
@@ -237,7 +244,7 @@ h1 {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  color: #ffc404;
+  color: #ffab04;
 }
 
 .text-button:hover,
@@ -246,13 +253,13 @@ h1 {
 }
 
 .modal {
-  background-color: #e4ddd4;
+  background-color: #c5eaecf7;
   border-radius: 6px;
   border: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
-  padding: 1rem;
+  padding: 15px;
   width: 80%;
-  max-width: 40rem;
+  max-width: 650px;
   animation: fade-slide-up 0.3s ease-out forwards;
 }
 

@@ -43,13 +43,18 @@ function Header() {
           {!userData && <Button onClick={handleShowLogin}> Login/Register </Button>}
           {
             userData && userData['name'] && hideLogin &&
-            <>
-              <span>Hello {userData['name']}</span>
+            <div className="col-6">
+              <span className="userName">Hello {userData['name']}</span>&nbsp;&nbsp;
               <Button textOnly onClick={handleShowCart}>
-                <img src={cart} height="50px" width="50px" /> ({totalCartItems})
-              </Button>
+                <img src={cart} height="50px" width="50px" /> 
+                {/* Cart */}
+                <span className="cart-text">
+                ({totalCartItems})
+                </span>
+                
+              </Button> &nbsp;&nbsp;
               <Button onClick={handleLogout}>Logout</Button>
-            </>
+            </div>
 
           }
 

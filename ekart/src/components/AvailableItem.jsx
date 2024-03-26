@@ -29,7 +29,7 @@ function AvailableItem({ item }) {
         <div>
           <h3>{item['name']}</h3>
           <p className="item-price">
-            {item['price']}
+            Price: &#8377;&nbsp;{item['price']}
           </p>
         </div>
         <p className="item-actions">
