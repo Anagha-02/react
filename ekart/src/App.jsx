@@ -11,6 +11,7 @@ import ItemsList from './components/ItemList';
 import AvailableItem from './components/AvailableItem';
 import Cart from './components/Cart';
 import AppAuth from './components/AppAuth';
+import Orders from './components/Orders';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +22,7 @@ function App() {
         <Header />
         <AppAuth />
         <ItemsList />
+        <Orders />
         <Cart />
       </CartContextProvider>
     </ProgressContextProvider>

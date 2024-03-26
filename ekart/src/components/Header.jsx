@@ -4,6 +4,7 @@ import cart from '../assests/cart.jpg';
 import CartContext from '../store/CartContext.jsx'
 import ProgressContext from '../store/ProgressContext.jsx';
 import Button from '../Layout/Button.jsx';
+import Users from "./Users.jsx";
 
 function Header() {
   const cartCtx = useContext(CartContext);
@@ -44,10 +45,10 @@ function Header() {
           {
             userData && userData['name'] && hideLogin &&
             <div className="col-6">
-              <span className="userName">Hello {userData['name']}</span>&nbsp;&nbsp;
+              <Users name={userData['name']} />
+              {/* <span className="userName">Hello {userData['name']}</span>&nbsp;&nbsp; */}
               <Button textOnly onClick={handleShowCart}>
                 <img src={cart} height="50px" width="50px" /> 
-                {/* Cart */}
                 <span className="cart-text">
                 ({totalCartItems})
                 </span>

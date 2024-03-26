@@ -43,7 +43,7 @@ function Register({isSuccessful}) {
       <div>
         Register Page
         <form onSubmit={handleSubmit}>
-          <Input label="Full Name" type="text" id="name" />
+          <Input label="Full Name" type="text" id="name" isRef={true}/>
           <Input label="E-Mail Address" type="email" id="email" />
           <Input label="Address" type="text" id="address" />
           <Input label="Postal Code" type="text" id="pincode" />

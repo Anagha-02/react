@@ -1,5 +1,5 @@
 
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import Button from '../Layout/Button';
 import Input from '../Layout/Input'
 import Modal from '../Layout/Modal';
@@ -26,7 +26,7 @@ function Login() {
         clearData
     } = useHttp('http://localhost:3000/login', requestConfig);
 
-    {data && sessionStorage.setItem("accountDetails", JSON.stringify(data[0]))}
+    // {data && sessionStorage.setItem("accountDetails", JSON.stringify(data[0]))}
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -44,6 +44,11 @@ function Login() {
         progressCtx.hideLogin()
     }
 
+    // const focusRef = useRef(null)
+    // useEffect(() => {
+    //     focusRef.current.focus()
+    // }, [])
+
     let actions = (
         <>
             <Button>Login</Button>
@@ -54,7 +59,12 @@ function Login() {
         actions = <span>Sending order data...</span>;
     }
 
+    if(data && data['message'] === "Invalid credentials") {
+        data['message'] = "User Registered! Please Login to continue"
+      }
+
     if (data && !error) {
+        sessionStorage.setItem("accountDetails", JSON.stringify(data[0]))
         return (
             <Modal
                 open={progressCtx.progress === 'login'}
@@ -71,8 +81,8 @@ function Login() {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <Input label="E-Mail Address" type="email" id="email" />
-                <Input label="Password" type="text" id="password" />
+                <Input label="E-Mail Address" type="email" id="email" isRef={true}/>
+                <Input label="Password" type="text" id="password"/>
 
                 {error && <Error title="Failed to submit order" message={error} />}
 

@@ -7,6 +7,8 @@ ProgressContext = createContext({
   hideLogin: () => {},
   showDetails: () => {},
   hideDetails: () => {},
+  showOrders: () => {},
+  hideOrders: () => {},
   showCart: () => {},
   hideCart: () => {},
   showCheckout: () => {},
@@ -28,6 +30,15 @@ export function ProgressContextProvider({ children }) {
   function showCart() {
     setProgress('cart');
   }
+  
+  function showOrders() {
+    setProgress('orders');
+  }
+
+  function hideOrders() {
+    setProgress('');
+  }
+
   
   function showDetails() {
     setProgress('detail');
@@ -56,6 +67,8 @@ export function ProgressContextProvider({ children }) {
     hideLogin,
     showDetails,
     hideDetails,
+    showOrders,
+    hideOrders,
     showCart,
     hideCart,
     showCheckout,
