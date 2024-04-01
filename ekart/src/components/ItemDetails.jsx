@@ -1,9 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import useHttp from '../hooks/useHttp';
-import CartContext from '../store/CartContext';
-import Modal from '../Layout/Modal';
+import Modal from '../Template/Modal';
 import ProgressContext from '../store/ProgressContext';
-import Button from '../Layout/Button';
+import Button from '../Template/Button';
 
 const requestConfig = {
   method: 'POST',
@@ -14,7 +13,6 @@ const requestConfig = {
 
 function ItemDetails({item}) {
   const [data, setData] = useState(null);
-  const cartCtx = useContext(CartContext);
   const progressCtx = useContext(ProgressContext);
   const {
     data: loadedItems,
@@ -22,10 +20,6 @@ function ItemDetails({item}) {
     sendRequest,
     error
   } = useHttp('http://localhost:3000/itemDetails/' + item['itemId'], requestConfig);
-
-  console.log(loadedItems)
-  console.log(cartCtx.itemDetails)
-  console.log(item)
 
   if (isLoading) {
     return <p className="center">Fetching itemsList...</p>;

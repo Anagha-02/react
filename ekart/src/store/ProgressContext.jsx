@@ -17,37 +17,11 @@ ProgressContext = createContext({
 
 export function ProgressContextProvider({ children }) {  
   const userData = JSON.parse(sessionStorage.getItem('accountDetails'))
-  const [progress, setProgress] = userData ? useState('') : useState('login');
-  
-  function showLogin() {
-      setProgress('login');
-  }
+  const [progress, setProgress] = useState('')
 
-  function hideLogin() {
-    setProgress('');
-  }
-  
   function showCart() {
     setProgress('cart');
   }
-  
-  function showOrders() {
-    setProgress('orders');
-  }
-
-  function hideOrders() {
-    setProgress('');
-  }
-
-  
-  function showDetails() {
-    setProgress('detail');
-  }
-
-  function hideDetails() {
-    setProgress('');
-  }
-
 
   function hideCart() {
     setProgress('');
@@ -63,12 +37,6 @@ export function ProgressContextProvider({ children }) {
 
   const progressCtx = {
     progress: progress,
-    showLogin,
-    hideLogin,
-    showDetails,
-    hideDetails,
-    showOrders,
-    hideOrders,
     showCart,
     hideCart,
     showCheckout,

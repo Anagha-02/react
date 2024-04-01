@@ -1,8 +1,7 @@
 import React from "react";
-import Button from "../Layout/Button";
+import Button from "../Template/Button";
 
 function Users({name}) {
-    console.log("Rerendering")
     return (
         <span className="userName">Hello {name}</span>
     )

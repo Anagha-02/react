@@ -1,30 +1,20 @@
-import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.css'
-import Header from './components/Header'
-import Home from './components/Home'
-import Login from './components/Login'
-import Register from './components/Register'
-import { ProgressContextProvider } from './store/ProgressContext';
-import { CartContextProvider } from './store/CartContext';
-import ItemsList from './components/ItemList';
-import AvailableItem from './components/AvailableItem';
-import Cart from './components/Cart';
+import './App.css';
 import AppAuth from './components/AppAuth';
-import Orders from './components/Orders';
+import Cart from './components/Cart';
+import Checkout from './components/Checkout';
+import Header from './components/Header';
+import ItemsList from './components/ItemList';
+import { ProgressContextProvider } from './store/ProgressContext';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <ProgressContextProvider>
-      <CartContextProvider>
+      
         <Header />
         <AppAuth />
         <ItemsList />
-        <Orders />
         <Cart />
-      </CartContextProvider>
+        <Checkout />
     </ProgressContextProvider>
   )
 }

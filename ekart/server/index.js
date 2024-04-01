@@ -8,7 +8,7 @@ import {
     onSnapshot,
     getDocs,
     updateDoc,
-    deleteDoc, where
+    deleteDoc, where, or
 } from "@firebase/firestore"
 
 
@@ -151,6 +151,23 @@ app.get('/previousOrders/:userId', async (req, res) => {
     const ref = collection(firestore, "orders")
     const detailsQuery = query(ref, where("userId", "==", userId));
     const querySnapshot = await getDocs(detailsQuery);
+    const data = []
+    querySnapshot.forEach((doc) => {
+        data.push(doc.data())
+    });
+    res.status(200).json(data);
+});
+
+app.post('/search', async (req, res) => {
+    const searchValue = req.body.searchValue;
+    if (searchValue === null || searchValue === '') {
+        return res
+            .status(400)
+            .json({ message: 'Missing data' });
+    }
+    const searchRef = collection(firestore, "items")
+    const searchQuery = query(searchRef, or(where("name", "==", searchValue), where("itemId", "==", searchValue), where("price", "==", searchValue)));
+    const querySnapshot = await getDocs(searchQuery);
     const data = []
     querySnapshot.forEach((doc) => {
         data.push(doc.data())

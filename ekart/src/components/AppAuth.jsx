@@ -1,10 +1,10 @@
 
 import { useContext, useState } from 'react';
-import Button from '../Layout/Button';
+import Button from '../Template/Button';
 import Login from './Login';
 import Register from './Register';
 import ProgressContext from '../store/ProgressContext';
-import Modal from '../Layout/Modal';
+import Modal from '../Template/Modal';
 
 function AppAuth() {
     const [isLogin, setIsLogin] = useState(true);

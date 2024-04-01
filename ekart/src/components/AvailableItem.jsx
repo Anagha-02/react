@@ -1,23 +1,22 @@
 import { useContext, useState } from 'react';
-import CartContext from '../store/CartContext';
-import Button from '../Layout/Button.jsx';
-import ItemDetails from './ItemDetails.jsx';
+import { useDispatch } from 'react-redux';
+import Button from '../Template/Button.jsx';
 import ProgressContext from '../store/ProgressContext.jsx';
 
 function AvailableItem({ item }) {
-  const cartCtx = useContext(CartContext);
   const progressCtx = useContext(ProgressContext)
-  const [isDetail, setIsDetail] = useState(false);
+  const [isDetail, setIsDetail] = useState(false);  
+  
+  const dispatch = useDispatch()
 
   function handleMoreDetails() {
     // setIsDetail(true)
-    cartCtx.itemDetail(item);
     progressCtx.showDetails('detail');
     setIsDetail(true)
   }
 
   function handleAddItemToCart() {
-    cartCtx.addItem(item);
+    dispatch({type: "ADD_ITEM", item})
   }
 
   return (
